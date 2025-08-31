@@ -1,25 +1,23 @@
 const express = require("express");
 
-const app = express(); 
+const app = express();
 
-app.use("/",(req,res) => {
+app.use("/user", (req,res) => {
     res.send("Namaste Ramesh");
 });
 
-app.use("/test",(req,res) => {
-    res.send("Namaste Ramesh");
+app.get("/user",(req,res) => {
+    res.send({firstName: "valle",
+                lastName: "Ramesh"
+    });
 });
 
-app.use("/test2",(req,res) => {
-    res.send("Namaste Ramesh");
+app.post("/user",(req,res) => {
+    res.send("Added successfylly");
 });
 
-app.use("/test3",(req,res) => {
-    res.send("Namaste Ramesh");
-});
-
-app.use("/test4",(req,res) => {
-    res.send("Namaste Ramesh");
+app.delete("/user",(req,res) => {
+    res.send("Deleted successfully");
 });
 
 app.listen(5123,() => {
